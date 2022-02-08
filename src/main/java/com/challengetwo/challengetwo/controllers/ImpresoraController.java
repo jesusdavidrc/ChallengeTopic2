@@ -12,13 +12,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/impresoras")
 public class ImpresoraController {
 
-    private IImpresora impre = new ImpresoraFullColor();
+    @RequestMapping("/impresionbn")
+    public void imprimiBn(){
+        IImpresora imprimirbn = new ImpresoraBN();
+        imprimirbn.imprimir();
+    }
 
-    @PostMapping
-    public void nuevaImpresion(){
-        impre.imprimir();
+    @RequestMapping("/impresionbnc")
+    public void imprimiBnc(){
+        IImpresora imprimirbnc = new ImpresoraFullColor();
+        imprimirbnc.imprimir();
     }
 }
+
+
+
+
